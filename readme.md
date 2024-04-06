@@ -34,21 +34,21 @@ typedef enum
 
 Level filtering is done in two ways:
 
-A run-time global variable which defaults to `LOG_LEVEL_INFO` and is changed like so:
+A run-time global variable which defaults to `RLOG_LEVEL_INFO` and is changed like so:
 
 ```c
 void
 set_rlog_level(RLOG_LEVEL_WARNING);
 ```
 
-A compile-time definition `RLOG_MAX_LEVEL`. Levels above this value *should* be optimized away by the compiler. If not defined, this defaults to `LOG_LEVEL_VERBOSE` for release builds and `LOG_LEVEL_DEBUG` for debug builds.
+A compile-time definition `RLOG_MAX_LEVEL`. Levels above this value *should* be optimized away by the compiler. If not defined, this defaults to `RLOG_LEVEL_VERBOSE` for release builds and `RLOG_LEVEL_DEBUG` for debug builds.
 
 ```c
 #ifndef RLOG_MAX_LEVEL
 #ifdef DEBUG
-#define RLOG_MAX_LEVEL LOG_LEVEL_DEBUG
+#define RLOG_MAX_LEVEL RLOG_LEVEL_DEBUG
 #else
-#define RLOG_MAX_LEVEL LOG_LEVEL_VERBOSE
+#define RLOG_MAX_LEVEL RLOG_LEVEL_VERBOSE
 #endif
 #endif
 ```
