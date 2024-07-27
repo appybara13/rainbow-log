@@ -83,7 +83,10 @@ rlog_printf(RLogLevel level, RLogArgs args, const char* format, ...)
     va_start(vargs, format);
     int len = vsnprintf(NULL, 0, format, vargs);
     char* content_str = calloc(len + 1, sizeof(char));
+    va_end(vargs);
+    va_start(vargs, format);
     vsnprintf(content_str, len + 1, format, vargs);
+    va_end(vargs);
 
     char* line = strtok(content_str, "\n");
     while (line) {

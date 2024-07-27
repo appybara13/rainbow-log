@@ -13,7 +13,7 @@ Logging prints to stdout, with an interface similar to printf:
 ```c
 #include "rlog.h"
 
-RLOG_LEVEL_INFO("Hello %s", "world!");
+RLOG_INFO("Hello %s", "world!");
 ```
 
 There are 6 levels:
