@@ -7,7 +7,7 @@
     }
 
 #ifndef RLOG_MAX_LEVEL
-#ifdef DEBUG
+#ifndef NDEBUG
 #define RLOG_MAX_LEVEL RLOG_LEVEL_DEBUG
 #else
 #define RLOG_MAX_LEVEL RLOG_LEVEL_VERBOSE
